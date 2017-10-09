@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>AIno bot</title>
@@ -10,13 +11,13 @@
 
       // define the functions our commands will run.
       var hello = function() {
-        $("#hello").slideDown("slow");
-        scrollTo("#section_hello");
+        $("#hei").slideDown("slow");
+        scrollTo("#section_hei");
       };
 
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
-        'hello (there)':    hello,
+        'hei':    hello,
       };
 
       // OPTIONAL: activate debug mode for detailed logging in the console
@@ -28,7 +29,7 @@
       // OPTIONAL: Set a language for speech recognition (defaults to English)
       // For a full list of language codes, see the documentation:
       // https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what-languages-are-supported
-      annyang.setLanguage('en');
+      annyang.setLanguage('fi');
 
       // Start listening. You can call this here, or attach this call to an event, button, etc.
       annyang.start();
@@ -41,11 +42,12 @@
     <link rel="stylesheet" href="main.min.css" />
 	</head>
 	<body>
-		<h1>AIno bot</h1>
-    <section id="section_hello">
-      <p><em>Go ahead, try it&hellip;</em></p>
-      <p class="voice_instructions">Say "Hello!"</p>
-      <p id="hello" class="hidden">Annyang!</p>
+		<section id="section_header">
+			<h1>AIno bot</h1>
+		</section>
+    <section id="section_hei">
+      <p class="voice_instructions">Sano "Hei!"</p>
+      <p id="hei" class="hidden">Hei vaan!</p>
     </section>
     <div id="unsupported" class="hidden">
       <h4>It looks like your browser doesn't support speech recognition.</h4>
