@@ -19,7 +19,8 @@
 
 			var get_org = function(heard_org) {
         $("#p_org").slideDown("slow");
-				$("#aino_org").value = heard_org + '';
+				// $("#aino_org").value = heard_org + '';
+				document.getElementById("aino_org").value = heard_org.toString();
         // scrollTo("#section_hei");
       };
 
