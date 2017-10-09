@@ -17,9 +17,16 @@
         scrollTo("#section_hei");
       };
 
+			var get_org = function(hear_org) {
+        $("#p_org").slideDown("slow");
+				$("#aino_org").text = heard_org;
+        // scrollTo("#section_hei");
+      };
+
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
-        'hei':    hello,
+        'hei':    	hello,
+				'yritys *hear_org':   get_org,
       };
 
       // OPTIONAL: activate debug mode for detailed logging in the console
@@ -35,6 +42,12 @@
 
       // Start listening. You can call this here, or attach this call to an event, button, etc.
       annyang.start();
+
+			var scrollTo = function(identifier, speed) {
+		    $('html, body').animate({
+		        scrollTop: $(identifier).offset().top
+		    }, speed || 1000);
+		  }
     } else {
       $(document).ready(function() {
         $('#unsupported').fadeIn('fast');
@@ -49,7 +62,10 @@
 		</section>
     <section id="section_hei">
       <p class="voice_instructions">Sano "Hei!"</p>
-      <p id="hei" class="hidden">Hei vaan!</p>
+      <p id="hei" class="hidden">Heipä hei! Hauska tutustua. Sanotko ensiksi yrityksesi tai organisaatiosi nimen mahdollisimman selkeästi?</p>
+			<p id="p_org" class="hidden">
+				Kuulinko oikein: <input id="aino_org" type="text" size="20"/> ?
+			</p>
     </section>
     <div id="unsupported" class="hidden">
       <h4>It looks like your browser doesn't support speech recognition.</h4>
